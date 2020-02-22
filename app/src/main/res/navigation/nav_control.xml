@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_control"
+    app:startDestination="@+id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.example.calculatetext.FinishFragment"
+        android:label="fragment_finish"
+        tools:layout="@layout/fragment_finish">
+        <action
+            android:id="@+id/action_finishFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@anim/slid_from_left"
+            app:exitAnim="@anim/slid_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.calculatetext.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slid_from_left"
+            app:exitAnim="@anim/slid_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.calculatetext.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_finishFragment"
+            app:destination="@id/finishFragment"
+            app:enterAnim="@anim/slid_from_left"
+            app:exitAnim="@anim/slid_to_right" />
+        <action
+            android:id="@+id/action_mainFragment_self"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
